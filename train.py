@@ -24,7 +24,7 @@ for column in df.columns:
 # Split dataset
 X = df.drop("Churn", axis=1)
 y = df["Churn"]
-
+print(X.columns.tolist())
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
@@ -37,3 +37,4 @@ model.fit(X_train, y_train)
 joblib.dump(model, "churn_model.pkl")
 
 print("Model saved successfully")
+print(X.columns.tolist())
